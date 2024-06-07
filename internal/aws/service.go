@@ -1,25 +1,25 @@
 package aws
 
 import (
-    "context"
+	"context"
 
-    "github.com/aws/aws-sdk-go-v2/config"
-    "github.com/aws/aws-sdk-go-v2/service/dynamodb"
+	"github.com/aws/aws-sdk-go-v2/config"
+	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 )
 
 type Service struct {
-    DynamoDB *dynamodb.Client
+	DynamoDB *dynamodb.Client
 }
 
 func NewService() *Service {
-    cfg, err := config.LoadDefaultConfig(context.Background())
-    if err != nil {
-        return nil
-    }
+	cfg, err := config.LoadDefaultConfig(context.Background())
+	if err != nil {
+		return nil
+	}
 
-    client := dynamodb.NewFromConfig(cfg)
+	client := dynamodb.NewFromConfig(cfg)
 
-    return &Service{
-        DynamoDB: client,
-    }
+	return &Service{
+		DynamoDB: client,
+	}
 }

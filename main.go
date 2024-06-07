@@ -1,15 +1,15 @@
 package main
 
 import (
-    "log"
+	"log"
 
-    "github.com/Equilibriumz/url-shortener/internal/server"
+	"github.com/Equilibriumz/url-shortener/internal/server"
 )
 
 func main() {
-    s := server.InitServer()
+	s := server.InitServer()
 
-    if err := s.Start(":8080"); err != nil {
-        log.Fatal(err)
-    }
+	if err := s.Start(":8080"); err != nil {
+		log.Fatal(err)
+	}
 }
